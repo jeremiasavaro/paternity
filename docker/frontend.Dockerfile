@@ -2,9 +2,9 @@
 FROM node:20 AS builder
 
 WORKDIR /app
-COPY ../frontend/package.json ../frontend/package-lock.json ./
+COPY ../frontend-paternity/package.json ../frontend/package-lock.json ./
 RUN npm install
-COPY ../frontend .
+COPY ../frontend-paternity .
 RUN npm run build
 
 # Serve with nginx
